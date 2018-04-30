@@ -16,23 +16,260 @@
     <link href="<%=path%>/static/css/font-awesome.min.css" rel="stylesheet">
     <link href="<%=path%>/static/css/animate.css" rel="stylesheet">
     <link href="<%=path%>/static/css/style.css" rel="stylesheet">
+    <link href="<%=path%>/static/css/plugins/select2/select2.min.css" rel="stylesheet"/>
+    <link href="<%=path%>/static/css/plugins/select2/select2-bootstrap.min.css" rel="stylesheet"/>
+    <link href="<%=path%>/static/css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet"/>
+    <link href="<%=path%>/static/css/plugins/sweetalert/sweetalert2.min.css" rel="stylesheet"/>
+    <link href="<%=path%>/static/css/plugins/iCheck/skins/all.css" rel="stylesheet"/>
 </head>
 <body class="gray-bg">
     <div class="row wrapper wrapper-content animated fadeInRight">
         <div class="col-sm-12">
-            <p>公文办理的拟文模块实现了一个简单的DEMO，未完整实现想要的效果和审批流程。</p>
-            <p>此DEMO的着重点是页面显示效果和交互效果的演示，突出本系统相对于老系统的页面效果的更新升级，并且本系统可以直接在手机上访问，方便快速地进行手机办公处理。</p>
-            <p>本系统的技术实现使用最新的JavaEE和SpringMVC, Spring, MyBatis框架，Activiti工作流引擎，具有优异的性能、高扩展能力、优良的安全性，可实现复杂的业务流程审批和完善的用户权限管理。</p>
+            <div class="row">
+                <h3>待办件</h3>
+                <div class="row">
+                    <div class="col-sm-2"><a class="btn btn-primary btn-outline">待办事项（1）</a></div>
+                    <div class="col-sm-2"><a class="btn btn-primary btn-outline">已办件（2）</a></div>
+                    <div class="col-sm-8 text-right"><a class="btn btn-primary btn-outline">更多>></a></div>
+                    <div class="col-sm-12" style="margin-top: 3px;">
+                    <table id="one" data-classes="table table-hover"
+                           data-show-toggle="false"
+                           data-show-refresh="false"
+                           data-show-columns="false"></table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" style="margin-top: 20px;">
+                <h3>待阅件</h3>
+                <div class="row">
+                    <div class="col-sm-2"><a class="btn btn-primary btn-outline">待阅事项（1）</a></div>
+                    <div class="col-sm-2"><a class="btn btn-primary btn-outline">已阅件（2）</a></div>
+                    <div class="col-sm-8 text-right"><a class="btn btn-primary btn-outline">更多>></a></div>
+                    <div class="col-sm-12" style="margin-top: 3px;">
+                        <table id="two" data-classes="table table-hover"
+                               data-show-toggle="false"
+                               data-show-refresh="false"
+                               data-show-columns="false"></table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" style="margin-top: 20px;">
+                <h3>文稿审批</h3>
+                <div class="row">
+                    <div class="col-sm-2"><a class="btn btn-primary btn-outline">待办文稿（1）</a></div>
+                    <div class="col-sm-2"><a class="btn btn-primary btn-outline">已办件（2）</a></div>
+                    <div class="col-sm-8 text-right"><a class="btn btn-primary btn-outline">更多>></a></div>
+                    <div class="col-sm-12" style="margin-top: 3px;">
+                        <table id="three" data-classes="table table-hover"
+                               data-show-toggle="false"
+                               data-show-refresh="false"
+                               data-show-columns="false"></table>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
     </div>
 </body>
 <!-- 全局js -->
+<!-- 全局js -->
 <script src="<%=path%>/static/js/jquery.min.js"></script>
 <script src="<%=path%>/static/js/bootstrap.min.js"></script>
 <script src="<%=path%>/static/js/plugins/metisMenu/metisMenu.min.js"></script>
 <script src="<%=path%>/static/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="<%=path%>/static/js/plugins/select2/select2.min.js"></script>
+<script src="<%=path%>/static/js/plugins/select2/i18n/zh-CN.js"></script>
+<script src="<%=path%>/static/js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+<script src="<%=path%>/static/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+<script src="<%=path%>/static/js/plugins/sweetalert/sweetalert2.min.js"></script>
+<script src="<%=path%>/static/js/plugins/iCheck/icheck.min.js"></script>
+<script src="<%=path%>/static/js/plugins/formautofill/jquery.formautofill.min.js"></script>
 
+<script>
+    $(function () {
+        loadTableData1();
+        loadTableData2();
+        loadTableData3();
+    });
 
+    function loadTableData1() {
+        $('#one').bootstrapTable('destroy');
+        $('#one').bootstrapTable({
+            data:[
+                {
+                    id: 1,
+                    _number: 1,
+                    textNo: "公文标题1",
+                    title: '加急',
+                    pubTime: '王**'
+                },
+                {
+                    id: 2,
+                    _number: 2,
+                    textNo: "公文标题2",
+                    title: '加急',
+                    pubTime: '杨**'
+                }
+            ],
+            singleSelect: false,
+            idField: 'id',
+            striped: true,
+            pagination:false,
+            sidePagination: 'server',
+            maintainSelected:true,
+            search: false,
+            height: '121',
+            columns: [
+                {
+                    field: '_checkbox',
+                    checkbox: true
+                },
+                {
+                    field: 'id',
+                    align: 'center',
+                    visible: false
+                },
+                {
+                    title: '序号',
+                    field: '_number',
+                    align: 'center'
+                },
+                {
+                    title: '标题',
+                    field: 'textNo',
+                    align: 'center'
+                },
+                {
+                    title: '紧急程度',
+                    field: 'title',
+                    align: 'center'
+                },
+                {
+                    title: '登记人',
+                    field: 'pubTime',
+                    align: 'center'
+                }
+            ]
+        });
+    }
+
+    function loadTableData2() {
+        $('#two').bootstrapTable('destroy');
+        $('#two').bootstrapTable({
+            data:[
+                {
+                    id: 1,
+                    _number: 1,
+                    textNo: "标题1",
+                    title: '普通',
+                    pubTime: '王**'
+                },
+                {
+                    id: 2,
+                    _number: 2,
+                    textNo: "标题2",
+                    title: '绝密',
+                    pubTime: '杨**'
+                }
+            ],
+            singleSelect: false,
+            idField: 'id',
+            striped: true,
+            pagination:false,
+            sidePagination: 'server',
+            maintainSelected:true,
+            search: false,
+            height: '121',
+            columns: [
+                {
+                    field: '_checkbox',
+                    checkbox: true
+                },
+                {
+                    field: 'id',
+                    align: 'center',
+                    visible: false
+                },
+                {
+                    title: '序号',
+                    field: '_number',
+                    align: 'center'
+                },
+                {
+                    title: '标题',
+                    field: 'textNo',
+                    align: 'center'
+                },
+                {
+                    title: '密级',
+                    field: 'title',
+                    align: 'center'
+                },
+                {
+                    title: '登记人',
+                    field: 'pubTime',
+                    align: 'center'
+                }
+            ]
+        });
+    }
+
+    function loadTableData3() {
+        $('#three').bootstrapTable('destroy');
+        $('#three').bootstrapTable({
+            data:[
+                {
+                    id: 1,
+                    _number: 1,
+                    textNo: "文稿标题1",
+                    pubTime: '王**'
+                },
+                {
+                    id: 2,
+                    _number: 2,
+                    textNo: "文稿标题2",
+                    pubTime: '杨**'
+                }
+            ],
+            singleSelect: false,
+            idField: 'id',
+            striped: true,
+            pagination:false,
+            sidePagination: 'server',
+            maintainSelected:true,
+            search: false,
+            height: '121',
+            columns: [
+                {
+                    field: '_checkbox',
+                    checkbox: true
+                },
+                {
+                    field: 'id',
+                    align: 'center',
+                    visible: false
+                },
+                {
+                    title: '序号',
+                    field: '_number',
+                    align: 'center'
+                },
+                {
+                    title: '标题',
+                    field: 'textNo',
+                    align: 'center'
+                },
+                {
+                    title: '登记人',
+                    field: 'pubTime',
+                    align: 'center'
+                }
+            ]
+        });
+    }
+</script>
 
 </html>

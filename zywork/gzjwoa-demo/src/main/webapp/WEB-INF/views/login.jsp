@@ -17,13 +17,24 @@
     <link href="<%=path%>/static/css/animate.css" rel="stylesheet">
     <link href="<%=path%>/static/css/style.css" rel="stylesheet">
     <link href="<%=path%>/static/css/plugins/sweetalert/sweetalert2.min.css" rel="stylesheet"/>
+
+    <style>
+
+        .login {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            height: 80%;
+        }
+    </style>
 </head>
 <body class="gray-bg">
-<div class="middle-box text-center loginscreen  animated fadeInDown">
+<div class="login text-center animated fadeInDown">
     <div>
-        <h3>赣州市纪委综合办公系统登录</h3>
+        <h2>赣州市纪委监委内部工作网登录</h2>
 
-        <form id="loginForm" class="m-t" role="form">
+        <form id="loginForm" class="m-t" role="form" style="width: 350px;">
             <div class="form-group">
                 <input name="name" class="form-control" placeholder="请输入用户名" required>
             </div>

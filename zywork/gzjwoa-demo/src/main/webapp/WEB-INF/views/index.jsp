@@ -34,7 +34,7 @@
                         <span><img alt="image" class="img-circle" src="<%=path%>/static/img/profile_small.jpeg" style="width:64px; height:64px;"/></span>
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                                 <span class="clear">
-                               <span class="block m-t-xs"><strong class="font-bold">${sessionScope.userVO.role}</strong></span>
+                               <span class="block m-t-xs"><strong class="font-bold">用户：${sessionScope.userVO.role}</strong></span>
                                 <span class="text-muted text-xs block">赣州市纪委</span>
                                 </span>
                         </a>
@@ -42,50 +42,70 @@
                     <div class="logo-element">纪委
                     </div>
                 </li>
-                <li>
+
+                <li class="active">
                     <a href="#">
                         <i class="fa fa-home"></i>
-                        <span class="nav-label">公文办理</span>
+                        <span class="nav-label">拟文</span>
                         <span class="fa arrow"></span>
                     </a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a class="J_menuItem" href="<%=path%>/editing/page" data-index="0">拟文</a>
-                        </li>
-                        <li>
-                            <a class="J_menuItem" href="<%=path%>/setting/generator-page" data-index="0">办文</a>
-                        </li>
-                        <li>
-                            <a class="J_menuItem" href="<%=path%>/setting/generator-page" data-index="0">阅办文</a>
+                            <a class="J_menuItem" href="<%=path%>/editing/page" data-index="0">拟文（1）</a>
                         </li>
                     </ul>
 
                 </li>
-                <li>
+
+                <li class="active">
                     <a href="#">
-                        <i class="fa fa-edit"></i>
+                        <i class="fa fa-home"></i>
+                        <span class="nav-label">待办件</span>
+                        <span class="fa arrow"></span>
+                    </a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a class="J_menuItem" href="<%=path%>/editing/page" data-index="0">涉密件（1）</a>
+                        </li>
+                        <li>
+                            <a class="J_menuItem" href="<%=path%>/editing/page" data-index="0">急件（1）</a>
+                        </li>
+                        <li>
+                            <a class="J_menuItem" href="<%=path%>/editing/page" data-index="0">普通件（1）</a>
+                        </li>
+                    </ul>
+
+                </li>
+
+                <li class="active">
+                    <a href="#">
+                        <i class="fa fa-home"></i>
+                        <span class="nav-label">待阅件</span>
+                        <span class="fa arrow"></span>
+                    </a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a class="J_menuItem" href="<%=path%>/editing/page" data-index="0">涉密件（1）</a>
+                        </li>
+                        <li>
+                            <a class="J_menuItem" href="<%=path%>/editing/page" data-index="0">普通件（1）</a>
+                        </li>
+                    </ul>
+
+                </li>
+
+                <li class="active">
+                    <a href="#">
+                        <i class="fa fa-home"></i>
                         <span class="nav-label">文稿审批</span>
                         <span class="fa arrow"></span>
                     </a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a class="J_menuItem" href="<%=path%>/single-table/page" data-index="0">文稿审批</a>
-                        </li>
-                    </ul>
-
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-archive"></i>
-                        <span class="nav-label">工作安排</span>
-                        <span class="fa arrow"></span>
-                    </a>
-                    <ul class="nav nav-second-level">
-                        <li>
-                            <a class="J_menuItem" href="#" data-index="0">委局一周安排</a>
+                            <a class="J_menuItem" href="<%=path%>/editing/page" data-index="0">普通件（1）</a>
                         </li>
                         <li>
-                            <a class="J_menuItem" href="#" data-index="0">部门一周安排</a>
+                            <a class="J_menuItem" href="<%=path%>/editing/page" data-index="0">信息采编（1）</a>
                         </li>
                     </ul>
 
@@ -102,12 +122,29 @@
                 <div class="navbar-header">
                     <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i>
                     </a>
+                    <div style="height:61px; line-height: 61px; font-size: 28px; font-weight: bold; margin-left: 50px;">赣州市纪委监委内部工作网</div>
                 </div>
                 <ul class="nav navbar-top-links navbar-right">
                     <li class="dropdown hidden-xs">
                         <a class="right-sidebar-toggle" aria-expanded="false">
                             <i class="fa fa-tasks"></i> 主题
                         </a>
+                    </li>
+                </ul>
+            </nav>
+            <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+                <ul class="nav navbar-top-links navbar-right">
+                    <li class="dropdown hidden-xs">
+                        <a>公文处理</a>
+                    </li>
+                    <li class="dropdown hidden-xs">
+                        <a>行政事务</a>
+                    </li>
+                    <li class="dropdown hidden-xs">
+                        <a>个人空间</a>
+                    </li>
+                    <li class="dropdown hidden-xs">
+                        <a>系统设置</a>
                     </li>
                 </ul>
             </nav>

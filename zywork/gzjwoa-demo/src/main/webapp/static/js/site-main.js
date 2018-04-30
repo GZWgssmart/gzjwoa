@@ -136,3 +136,25 @@ function swalSuccess(message) {
 function swalError(message) {
     swal('提示', message, 'error');
 }
+
+
+function validateForm(formId, validateFields) {
+    $('#' + formId).bootstrapValidator({
+        live: 'enabled',
+        // excluded: [':disabled', ':hidden', ':not(:visible)'],,
+        message: '请输入或选择合法的值',
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: validateFields
+    });
+}
+
+function resetValidateForm(formId) {
+    let formValidator = $('#' + formId).data('bootstrapValidator');
+    if (formValidator !== undefined) {
+        formValidator.destroy();
+    }
+}

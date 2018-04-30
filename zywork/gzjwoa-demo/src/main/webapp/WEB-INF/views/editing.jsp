@@ -21,6 +21,7 @@
     <link href="<%=path%>/static/css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet"/>
     <link href="<%=path%>/static/css/plugins/sweetalert/sweetalert2.min.css" rel="stylesheet"/>
     <link href="<%=path%>/static/css/plugins/iCheck/skins/all.css" rel="stylesheet"/>
+    <link href="<%=path%>/static/css/plugins/bootstrapValidator/bootstrapValidator.min.css" rel="stylesheet"/>
 
     <style>
 
@@ -92,7 +93,7 @@
                 <h4 class="modal-title">添加拟文</h4>
             </div>
             <div class="modal-body">
-                <form id="add-editing" class="form-horizontal row" enctype="multipart/form-data">
+                <form id="add-form" class="form-horizontal row" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="textNo" class="col-sm-2 control-label">公文文号：</label>
 
@@ -247,16 +248,12 @@
 <script src="<%=path%>/static/js/plugins/sweetalert/sweetalert2.min.js"></script>
 <script src="<%=path%>/static/js/plugins/iCheck/icheck.min.js"></script>
 <script src="<%=path%>/static/js/plugins/formautofill/jquery.formautofill.min.js"></script>
+<script src="<%=path%>/static/js/plugins/bootstrapValidator/bootstrapValidator.min.js"></script>
 
 <script>
 
     $(function () {
         loadTableData($(this).val());
-        $('input').iCheck({
-            checkboxClass: 'icheckbox_square-green',
-            radioClass: 'iradio_square-green',
-            increaseArea: '20%'
-        });
     });
 
     function loadTableData(tableName) {
@@ -441,6 +438,11 @@
         console.log(paper)
         $('#selectWin').modal('hide');
         $('#addWin').modal('show');
+        validateForm('add-form', validateFields());
+        $('#addWin').on('hidden.bs.modal', function (e) {
+            $('#add-form')[0].reset();
+            resetValidateForm('add-form');
+        });
         $('#addWin').on('shown.bs.modal', function (e) {
             $('body').addClass('modal-open');
             $('body').css('padding-right','6px');
@@ -449,22 +451,97 @@
 
     function showEditWin(row) {
         $("#editWin").modal('show');
+        validateForm('edit-form', validateFields());
+        $("#editWin").on('hidden.bs.modal', function (e) {
+            $('#edit-form')[0].reset();
+            resetValidateForm('edit-form');
+        });
         $("#edit-form").autofill(row);
     }
 
     function save() {
-        $.post('<%=path%>/editing/save',
-            $('#add-editing').serialize(),
-            function (data) {
-                if (data.code === 200) {
-                    swal('提示', data.message, 'success');
-                    $('#addWin').modal('hide');
-                    $('#editing-items').bootstrapTable('refresh', {
-                        url: '<%=path%>/editing/page-cond'
-                    })
+        var form = $('#add-form');
+        form.bootstrapValidator('validate');
+        if (form.data('bootstrapValidator').isValid()) {
+            $.post('<%=path%>/editing/save',
+                form.serialize(),
+                function (data) {
+                    if (data.code === 200) {
+                        swal('提示', data.message, 'success');
+                        $('#addWin').modal('hide');
+                        $('#editing-items').bootstrapTable('refresh', {
+                            url: '<%=path%>/editing/page-cond'
+                        })
+                    }
+                }, 'json'
+            )
+        }
+    }
+
+    function validateForm(formId, validateFields) {
+        $('#' + formId).bootstrapValidator({
+            live: 'enabled',
+            // excluded: [':disabled', ':hidden', ':not(:visible)'],,
+            message: '请输入或选择合法的值',
+            feedbackIcons: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            fields: validateFields
+        });
+    }
+
+    function resetValidateForm(formId) {
+        let formValidator = $('#' + formId).data('bootstrapValidator');
+        if (formValidator !== undefined) {
+            formValidator.destroy();
+        }
+    }
+
+    function validateFields() {
+        return {
+            textNo: {
+                validators: {
+                    notEmpty: {
+                        message: '此项为必须项'
+                    }
                 }
-            }, 'json'
-        )
+            },
+            title: {
+                validators: {
+                    notEmpty: {
+                        message: '此项为必须项'
+                    },
+                    stringLength: {
+                        min: 2,
+                        max: 12,
+                        message: '长度必须在2-12之间'
+                    }
+                }
+            },
+            dept: {
+                validators: {
+                    notEmpty: {
+                        message: '此项为必须项'
+                    }
+                }
+            },
+            category: {
+                validators: {
+                    notEmpty: {
+                        message: '此项为必须项'
+                    }
+                }
+            },
+            type: {
+                validators: {
+                    notEmpty: {
+                        message: '此项为必须项'
+                    }
+                }
+            }
+        };
     }
 
 </script>
