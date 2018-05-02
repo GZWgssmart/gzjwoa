@@ -18,6 +18,11 @@ public class IndexController {
 
     @GetMapping("index")
     public String index() {
+        return "front_index";
+    }
+
+    @GetMapping("back-index")
+    public String backIndex() {
         return "login";
     }
 
