@@ -122,7 +122,7 @@
                 <div class="navbar-header">
                     <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i>
                     </a>
-                    <div style="height:61px; line-height: 61px; font-size: 28px; font-weight: bold; margin-left: 50px;">赣州市纪委监委内部工作网</div>
+                    <div class="hidden-xs hidden-sm" style="height:61px; line-height: 61px; font-size: 28px; font-weight: bold; margin-left: 50px;">赣州市纪委监委内部工作网</div>
                 </div>
                 <ul class="nav navbar-top-links navbar-right">
                     <li class="dropdown hidden-xs">
