@@ -25,7 +25,7 @@
             flex-direction: row;
             align-items: center;
             justify-content: center;
-            height: 35%;
+            height: 40%;
         }
 
         .bg-img {
