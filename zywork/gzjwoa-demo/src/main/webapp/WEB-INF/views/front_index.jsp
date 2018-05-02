@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>Index</title>
+    <title>赣州市纪委监委门户网站</title>
 
     <link rel="stylesheet" href="<%=path%>/static/assets/css/index.css" />
 

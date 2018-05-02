@@ -25,11 +25,22 @@
             flex-direction: row;
             align-items: center;
             justify-content: center;
-            height: 80%;
+            height: 35%;
+        }
+
+        .bg-img {
+            width: 100%;
+            height: 100%;
+            left: 0px;
+            top: 0px;
+            position: absolute;
+            opacity: 0.5;
         }
     </style>
 </head>
 <body class="gray-bg">
+<img class="bg-img img-responsive hidden-xs" src="<%=path%>/static/img/bg.jpg"/>
+<img class="bg-img img-responsive hidden-lg hidden-md hidden-sm" src="<%=path%>/static/img/bg1.jpg"/>
 <div class="login text-center animated fadeInDown">
     <div>
         <h2>赣州市纪委监委内部工作网登录</h2>
