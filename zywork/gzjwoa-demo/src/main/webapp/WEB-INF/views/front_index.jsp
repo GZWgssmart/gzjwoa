@@ -898,11 +898,11 @@
                 <!--选项的头部-->
                 <div id="tab-header-2">
                     <ul id="tabs2-2">
-                        <li class="tab-li selected" style="cursor:pointer;">专刊内容一</li>
-                        <li class="tab-li" style="cursor:pointer;">专刊内容二</li>
-                        <li class="tab-li" style="cursor:pointer;">专刊内容三</li>
-                        <li class="tab-li" style="cursor:pointer;">专刊内容四</li>
-                        <li class="tab-li" style="cursor:pointer;">专刊内容五</li>
+                        <li class="tab-li selected" style="cursor:pointer;">部门一</li>
+                        <li class="tab-li" style="cursor:pointer;">部门二</li>
+                        <li class="tab-li" style="cursor:pointer;">部门三</li>
+                        <li class="tab-li" style="cursor:pointer;">部门四</li>
+                        <li class="tab-li" style="cursor:pointer;">部门五</li>
                     </ul>
                 </div>
                 <!--主要内容-->
