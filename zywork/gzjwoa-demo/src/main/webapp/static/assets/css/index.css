@@ -3,20 +3,60 @@ body {
     margin: 0;
     float: initial;
     padding-left: 3%;
-    font-family: \5B8B\4F53, TimesNR, 'New Century Schoolbook', Georgia, 'New York', serif;
+    font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;
 }
-.col-1 {width: 8.33%;}
-.col-2 {width: 16.66%;}
-.col-3 {width: 25%;}
-.col-4 {width: 33.33%;}
-.col-5 {width: 41.66%;}
-.col-6 {width: 50%;}
-.col-7 {width: 58.33%;}
-.col-8 {width: 66.66%;}
-.col-9 {width: 75%;}
-.col-10 {width: 83.33%;}
-.col-11 {width: 91.66%;}
-.col-12 {width: 100%;}
+html{
+    overflow-x:hidden;
+    overflow-y:auto;
+}
+.col-1 {
+    width: 8.33%;
+}
+
+.col-2 {
+    width: 16.66%;
+}
+
+.col-3 {
+    width: 25%;
+}
+
+.col-4 {
+    width: 33.33%;
+}
+
+.col-5 {
+    width: 41.66%;
+}
+
+.col-6 {
+    width: 50%;
+}
+
+.col-7 {
+    width: 58.33%;
+}
+
+.col-8 {
+    width: 66.66%;
+}
+
+.col-9 {
+    width: 75%;
+}
+
+.col-10 {
+    width: 83.33%;
+}
+
+.col-11 {
+    width: 91.66%;
+}
+
+.col-12 {
+    width: 100%;
+}
+
 a {
     text-decoration: none;
     color: black;
@@ -103,7 +143,7 @@ a {
     position: relative;
     border: none;
     background-color: #990101;
-    color: rgba(255, 255, 255, 0.8);
+    color: #fff;
     /*padding: 7px;*/
     float: right;
     outline: none;
@@ -174,7 +214,7 @@ a {
 .nav {
     width: 97%;
     color: #bbb;
-    background: brown;
+    background: #F40002;
     font-weight: bold;
     letter-spacing: 0.025em;
 }
@@ -190,28 +230,34 @@ a {
     line-height: 3em;
 
 }
-#toggle-li{
+
+#toggle-li {
     float: left;
     width: 100%;
-    padding-right: 35px;
+    padding-right: 25px;
 }
+
 .nav ul li a span {
     border: solid;
     margin-top: 2px;
-    margin-right: 2px;
     margin-bottom: 2px;
-    margin-left: 2px;
     padding-top: 5px;
     padding-bottom: 5px;
     border-width: 0px 1px;
     border-color: red white;
+    color: #ffffff;
     line-height: 150%;
     padding-right: 20px;
     padding-left: 20px;
 }
 
 .nav ul li:hover {
-    background: rgba(0, 64, 255, 0.8);
+    background: #BF1607;
+}
+
+.nav ul li {
+    padding-left: 30%;
+    padding-right: 20%;
 }
 
 .filler {
@@ -261,89 +307,124 @@ a {
     _margin-right: -3px;
 }
 
-.container {
-    width: 600px;
+.section-focus-pic {
+    margin: 20px auto 0 auto;
     height: 400px;
+    width: 86%;
     overflow: hidden;
     position: relative;
-    padding: 1px;
-    flex: 1 100%;
-    border: none;
+    /*float: left;*/
 }
 
-.cen {
-    width: 4200px;
-    height: 400px;
+.section-focus-pic ul li {
     position: absolute;
-    z-index: 1;
-}
-
-.cen img {
-    float: left;
-}
-
-.cen-img {
-    width: 600px;
+    top: 0;
+    left: 570px;
+    width: 100%;
     height: 400px;
-    position: relative;
 }
 
-#bts {
+.section-focus-pic ul li h3 {
     position: absolute;
-    height: 10px;
-    width: 100px;
-    z-index: 2;
+    bottom: 1px;
+    left: 0;
+    width: 50%;
+    font-weight: normal;
+    color: #FFF;
+    margin-left: 20px;
+    z-index: 111;
+    font-size: 18px;
+    font-family: "微软雅黑";
+}
+
+.section-focus-pic ul li div {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 90px;
+    background-color: #000;
+    width: 100%;
+    opacity: 0.6;
+    filter: alpha(opacity=60);
+}
+
+.section-focus-pic .pages {
+    width: 50%;
+    height: 400px;
+}
+
+.section-focus-pic .controler {
+    position: absolute;
     bottom: 20px;
-    left: 250px;
-}
-
-#bts span {
-    cursor: pointer;
-    float: left;
-    border: 1px solid #fff;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: #333;
-    margin-right: 5px;
-}
-
-#bts .on {
-    background: orangered;
-}
-
-.arrow {
-    cursor: pointer;
-    display: none;
-    line-height: 39px;
-    text-align: center;
-    font-size: 36px;
-    font-weight: bold;
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    border-radius: 50%;
-    z-index: 2;
-    top: 180px;
-    text-decoration: none;
-    background-color: rgba(0, 0, 0, 0.1);
-    color: rgba(255, 255, 255, 0.9);
-}
-
-.arrow:hover {
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-.container:hover .arrow {
-    display: block;
-}
-
-#prev {
-    left: 20px;
-}
-
-#next {
     right: 20px;
+}
+
+.section-focus-pic .controler b {
+    cursor: pointer;
+    width: 20px;
+    height: 10px;
+    display: block;
+    overflow: hidden;
+    text-indent: 20px;
+    background: url(icon/news_index_icon.png) no-repeat -136px 3px;
+    float: left;
+    margin: 0 0 0 5px;
+}
+
+.section-focus-pic .controler b.down {
+    background-position: -161px 1px;
+}
+
+.section-focus-pic .controler2 a {
+    display: block;
+    width: 40px;
+    position: absolute;
+    top: 180px;
+    height: 40px;
+}
+
+.section-focus-pic .controler2 a i {
+    cursor: pointer;
+    display: block;
+    width: 22px;
+    height: 34px;
+    background: url(icon/star.png) no-repeat;
+}
+
+.section-focus-pic .controler2 .prev {
+    left: 5px;
+}
+
+.section-focus-pic .controler2 .prev i {
+    background-position: -34px -68px;
+    _background: none;
+    _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='icon/star_05.png');
+    margin-left: 5px;
+}
+
+.section-focus-pic .controler2 .prev:hover i {
+    left: 10px;
+    background-position: -34px -24px;
+    _background: none;
+    _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='icon/star_03.png');
+}
+
+.section-focus-pic .controler2 .next {
+    right: 10px;
+}
+
+.section-focus-pic .controler2 .next i {
+    background-position: -62px -68px;
+    _background: none;
+    _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='icon/star_06.png');
+    margin-left: 10px;
+}
+
+.section-focus-pic .controler2 .next:hover i {
+    right: 10px;
+    background-position: -62px -24px;
+    _background: none;
+    _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='icon/star_04.png');
 }
 
 .text-right {
@@ -378,7 +459,7 @@ div .black {
     float: right;
     position: absolute;
     overflow: initial;
-    left: 80%;
+    left: 83.5%;
     width: 20%;
     margin-top: 2%;
 }
@@ -431,24 +512,19 @@ div .black {
     }
 
     .div-01 .nav ul li {
-        margin: 1px 1%;
+        margin: 1px 1px;
         padding: 0;
-    }
-
-    .nav ul li:hover {
-        background: rgba(0, 64, 255, 0.8);
-        width: auto;
+        width: 300px;
     }
 
     .div-01 .text-right {
         flex: 0 auto;
-        position: absolute;
+        position: initial;
         order: 1;
         line-height: 29px;
         overflow: hidden;
-        width: 55%;
-        float: left;
-        margin-left: 45%;
+        width: 50%;
+        float: right;
     }
 
     .top-text {
@@ -456,7 +532,7 @@ div .black {
     }
 
     .top-text .text {
-        width: 90%;
+        width: 85%;
         margin-left: 10%;
     }
 
@@ -570,12 +646,12 @@ div .black {
     }
 
     #tab-header ul {
-        width: 90%;
+        width: 100%;
         left: -25px;
     }
 
     #tab-header-2 ul {
-        width: 90%;
+        width: 100%;
         left: -25px;
     }
 
@@ -630,17 +706,19 @@ div .black {
 
     .bbs-tab .bbs-ul li .bbs-item {
         display: block;
-        padding: 10px 10%;
+        padding: 10px 18px;
         margin: 0;
     }
 
     .div-01 .containers {
-        overflow: hidden;
+        overflow: auto;
     }
 }
+
 @media screen and (min-width: 920px) and (max-width: 1533px) {
 
 }
+
 @media screen and (min-width: 960px) and (max-width: 1199px) {
     /*body{background: #5bc0de}*/
     .banner {
@@ -667,11 +745,42 @@ div .black {
         position: absolute;
         overflow: initial;
         padding: 10px 10px;
-        left: 50%;
+        left: 73%;
         width: 30%;
         margin-top: 2%;
     }
-
+    .div-01 .nav-form{
+        width: 30%;
+        margin-right: 5%;
+    }
+    .nav-form .title-right{
+        float: left;
+        margin-left: 28%;
+    }
+    .nav-form .form-text{
+        width: 100%;
+    }
+    .div-01 .nav-form-center{
+        width: 30%;
+        margin-right: 5%;
+    }
+    .nav-form-center.title-right{
+        float: left;
+        margin-left: 28%;
+    }
+    .nav-form-center .form-text{
+        width: 100%;
+    }
+    .div-01 .nav-form-right{
+        width: 30%;
+    }
+    .nav-form-right.title-right{
+        float: left;
+        margin-left: 28%;
+    }
+    .nav-form-right .form-text{
+        width: 100%;
+    }
     .text-left {
         order: 1;
         width: 50%;
@@ -680,17 +789,17 @@ div .black {
     .text-right {
         flex: 0 auto;
         position: absolute;
-        width: 55%;
+        width: 65%;
         order: 1;
         float: right;
         line-height: 20px;
         overflow: hidden;
-        margin-left: 60%;
+        margin-left: 35%;
     }
 
     .top-text {
         float: left;
-        width: 80%;
+        width: 100%;
     }
 
     .top-text .text {
@@ -777,15 +886,12 @@ div .black {
         width: 80%;
     }
 
-    .title-right {
-        width: 25%;
-    }
-
     .tabmain {
         /*position: absolute;*/
         width: 45%;
     }
-    .tabmain #container{
+
+    .tabmain #container {
         float: left;
         width: 190%;
         height: 384px;
@@ -794,16 +900,19 @@ div .black {
         position: absolute;
         left: 128px;
     }
-    .tab-main{
+
+    .tab-main {
         width: 109.5%;
         margin-right: 10px;
         padding-right: 5px;
         margin-left: -10px;
         padding-top: 10px;
     }
-    .tab-main #tab-2{
+
+    .tab-main #tab-2 {
         width: 91.5%;
     }
+
     #sliderParent {
         float: right;
         left: 74%;
@@ -813,6 +922,7 @@ div .black {
     .wappal-left .form-text {
         width: 100%;
     }
+
     .wappal-right .form-text {
         width: 100%;
     }
@@ -871,16 +981,20 @@ div .black {
         border-left: 1px solid #ececec;
         border-right: 1px solid #ececec;
     }
-    .div-01 .bbs{
+
+    .div-01 .bbs {
         width: 100%;
     }
-    .div-01 #tabcontent1{
+
+    .div-01 #tabcontent1 {
         width: 100%;
     }
-    .div-01 #tabcontent2{
+
+    .div-01 #tabcontent2 {
         width: 100%;
     }
-    .div-01 #tabcontent3{
+
+    .div-01 #tabcontent3 {
         width: 100%;
     }
 }
@@ -899,7 +1013,7 @@ div .black {
     }
 
     .div-01 .nav ul li {
-        margin: 1px 5px;
+        margin: 1px 8px;
         padding: 10px 30px;
     }
 
@@ -908,7 +1022,8 @@ div .black {
     }
 
     .text-left {
-        width: 50%;
+        width: 82%;
+        margin-left: 10%;
     }
 
     .container {
@@ -918,9 +1033,10 @@ div .black {
 
     .text-right {
         width: 99%;
-        padding-left: 15%;
     }
-
+    .div-01 .text-right .text{
+        width: 95%;
+    }
     .black {
         float: left;
         width: 18%;
@@ -928,7 +1044,7 @@ div .black {
     }
 
     .nav-title .title-right span {
-        padding-left: 95%;
+        padding-left: 90%;
     }
 
     .nav-form {
@@ -938,12 +1054,24 @@ div .black {
         float: left;
         display: inline;
     }
+    .nav-form .form-text{
+        width: 100%;
+    }
+    .nav-form .nav-text{
+        width: 100%;
+    }
 
     .nav-form-center {
         width: 95%;
         height: auto;
         display: flow-root;
         float: left
+    }
+    .nav-form-center .form-text{
+        width: 100%;
+    }
+    .nav-form-center .nav-text{
+        width: 100%;
     }
 
     .nav-form-right {
@@ -952,11 +1080,22 @@ div .black {
         float: right;
         display: inline;
     }
+    .nav-form-right .form-text{
+        width: 100%;
+    }
+    .nav-form-right .nav-text{
+        width: 100%;
+    }
 
     .wappal-right .form-text {
         width: 100%;
     }
-
+    .wappal-left .form-text{
+        width: 100%;
+    }
+    .wappal-left .nav-text{
+        width: 100%;
+    }
     .tabmain {
         /*position: absolute;*/
         width: 45%;
@@ -996,7 +1135,8 @@ div .black {
         width: 170%;
         order: 1;
     }
-    .wappal-left .form-text{
+
+    .wappal-left .form-text {
         width: 100%;
     }
 
@@ -1031,8 +1171,10 @@ div .black {
         /*position: absolute;*/
         width: 100%;
     }
-    .tab-main #tab-2{
+
+    .tab-main #tab-2 {
         margin-top: 20px;
+        margin-left: 0;
     }
 
     .tab {
@@ -1073,6 +1215,127 @@ div .black {
     .icon-renzheng, .bottom-icon {
         padding-top: 5%;
     }
+
+    .section-focus-pic {
+        margin: 20px auto 0 auto;
+        height: 400px;
+        width: 86%;
+        overflow: hidden;
+        position: relative;
+        float: left;
+    }
+
+    .section-focus-pic ul li {
+        position: absolute;
+        top: 0;
+        left: 570px;
+        width: 100%;
+        height: 400px;
+    }
+
+    .section-focus-pic ul li h3 {
+        position: absolute;
+        bottom: 1px;
+        left: 0;
+        width: 50%;
+        font-weight: normal;
+        color: #FFF;
+        margin-left: 20px;
+        z-index: 111;
+        font-size: 18px;
+        font-family: "微软雅黑";
+    }
+
+    .section-focus-pic ul li div {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 90px;
+        background-color: #000;
+        width: 100%;
+        opacity: 0.6;
+        filter: alpha(opacity=60);
+    }
+
+    .section-focus-pic .pages {
+        width: 50%;
+        height: 400px;
+    }
+
+    .section-focus-pic .controler {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+    }
+
+    .section-focus-pic .controler b {
+        cursor: pointer;
+        width: 20px;
+        height: 10px;
+        display: block;
+        overflow: hidden;
+        text-indent: 20px;
+        background: url(icon/news_index_icon.png) no-repeat -136px 3px;
+        float: left;
+        margin: 0 0 0 5px;
+    }
+
+    .section-focus-pic .controler b.down {
+        background-position: -161px 1px;
+    }
+
+    .section-focus-pic .controler2 a {
+        display: block;
+        width: 40px;
+        position: absolute;
+        top: 180px;
+        height: 40px;
+    }
+
+    .section-focus-pic .controler2 a i {
+        cursor: pointer;
+        display: block;
+        width: 22px;
+        height: 34px;
+        background: url(icon/star.png) no-repeat;
+    }
+
+    .section-focus-pic .controler2 .prev {
+        left: 5px;
+    }
+
+    .section-focus-pic .controler2 .prev i {
+        background-position: -34px -68px;
+        _background: none;
+        _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='icon/star_05.png');
+        margin-left: 5px;
+    }
+
+    .section-focus-pic .controler2 .prev:hover i {
+        left: 10px;
+        background-position: -34px -24px;
+        _background: none;
+        _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='icon/star_03.png');
+    }
+
+    .section-focus-pic .controler2 .next {
+        right: 10px;
+    }
+
+    .section-focus-pic .controler2 .next i {
+        background-position: -62px -68px;
+        _background: none;
+        _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='icon/star_06.png');
+        margin-left: 10px;
+    }
+
+    .section-focus-pic .controler2 .next:hover i {
+        right: 10px;
+        background-position: -62px -24px;
+        _background: none;
+        _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='icon/star_04.png');
+    }
+
 }
 
 @media only screen and (min-width: 480px) and (max-width: 767px) {
@@ -1089,8 +1352,16 @@ div .black {
     .div-01 .nav {
         margin-top: -65px;
     }
-    .nav #toggle-li{
+
+    .nav #toggle-li {
         width: 100%;
+    }
+    .section-focus-pic{
+        width: 89%;
+    }
+    .section-focus-pic ul li div{
+        width: 100%;
+        margin-left: 1px;
     }
     .nav ul li {
         display: inline-block;
@@ -1100,24 +1371,14 @@ div .black {
 
     .div-01 .text-left {
         margin-top: -15px;
+        width: 100%;
     }
 
-    .div-01 .nav ul li a {
-        width: 190px;
-        height: 41px;
-        line-height: 43px;
-        background: blue;
-        color: #FFF;
-        margin: 5px 5px;
-        font-size: 25px;
-        display: block;
-        text-align: center;
-    }
-    .div-01 .nav ul li:hover{
-        width: auto;
-        margin: 0 0;
-    }
 
+
+    .containers .navs{
+        width: 90%;
+    }
     .nav .nav-button {
         display: none;
     }
@@ -1126,9 +1387,12 @@ div .black {
         position: absolute;
         overflow: initial;
         padding: 10px 10px;
-        left: 50%;
+        left: 60%;
         width: 30%;
         margin-top: 2%;
+    }
+    .text-right .top-text .text{
+        width: 98%;
     }
 
     .nav-form .nav-title {
@@ -1164,7 +1428,24 @@ div .black {
         float: right;
         display: inline;
     }
-
+    .nav-form .form-text{
+        width: 100%;
+    }
+    .form-text .nav-text{
+        width: 100%;
+    }
+    .nav-form-center .form-text{
+        width: 100%;
+    }
+    .nav-form-center .nav-text{
+        width: 100%;
+    }
+    .nav-form-right .form-text{
+        width: 100%;
+    }
+    .nav-form-right .nav-text{
+        width: 100%;
+    }
     .wappal-left .nav-title {
         width: 99%;
     }
@@ -1174,34 +1455,47 @@ div .black {
     }
 
     .wappal-left, .wappal-right .form-text {
-        width: 104%;
+        width: 98%;
     }
-    .wappal-left .form-text{
-        width: 99%;
+
+    .wappal-left .form-text {
+        width: 98%;
+        /*margin-left: 10px;*/
     }
 
     .wappal-left {
         width: 99%;
     }
-
+    .wappal-right .form-text{
+        width: 100%;
+    }
+    #tab-2 #tab-header-2{
+        height: 85px;
+    }
+    .form-text .tab-main{
+        width: 100%;
+    }
     #tab {
         border: none;
+        width: 100%;
     }
 
     .tabmain {
         width: 97%;
         margin-right: 10px;
         padding-right: 5px;
-        margin-left: -10px;
+        /*margin-left: -10px;*/
     }
-    .tab-main{
+
+    .tab-main {
         width: 100%;
         margin-right: 10px;
         padding-right: 5px;
         margin-left: -10px;
         padding-top: 10px;
     }
-    .tab-main #tab-2{
+
+    .tab-main #tab-2 {
         width: 112%;
     }
 
@@ -1210,7 +1504,7 @@ div .black {
     }
 
     .wappal-right {
-        width: 95%;
+        width: 98%;
         padding-top: 30px;
     }
 
@@ -1218,7 +1512,7 @@ div .black {
         width: 100%;
     }
 
-    .wappal-right .nav-title .title-left {
+    .wappal-right .nav-title {
         width: 100%;
     }
 
@@ -1227,11 +1521,12 @@ div .black {
     }
 
     #tab-header {
-        padding-bottom: 120px;
+        padding-bottom: 90px;
     }
 
     .div-01 .containers {
         overflow: auto;
+        width: 98%;
     }
 
     .wappal-right #tabs ul {
@@ -1302,12 +1597,24 @@ div .black {
     }
 
     .icon-renzheng, .bottom-icon {
-        padding-top: 5%;
+        padding-top: 10%;
+    }
+    .div-01 .nav-titles{
+        width: 98%;
     }
 }
 
 @media only screen and (max-width: 479px) {
     /*body{background: #b92c28}*/
+    body{
+        width: 80%;
+        margin-left: 30px;
+        margin-right: 20px;
+    }
+    .div-01{
+       /* margin-left: 20px;*/
+        width: 100%;
+    }
     .div-01 .text-left {
         margin-top: -65px;
     }
@@ -1328,7 +1635,9 @@ div .black {
         border: 0 solid #ccc;
         margin: 10px 10px;
     }
-
+    .section-focus-pic{
+        width: 99%;
+    }
     .path-form-input {
         overflow: hidden;
     }
@@ -1358,22 +1667,26 @@ div .black {
         width: 90%;
         height: auto;
         float: right;
+        padding-left: 30px;
     }
-    .nav{
+
+    .nav {
         width: 97%;
         font-weight: bold;
-        background: rgba(255,255,255,0);
+        background: rgba(255, 255, 255, 0);
         letter-spacing: 0.025em;
     }
+
     .nav span {
         display: block;
         width: 200px;
         height: 40px;
         padding: 10px 10px;
         border-radius: 3px;
-        background: rgba(0, 64, 255, 0.8);
+        background: rgba(244,0,4, 1);
         cursor: pointer;
-        margin-left: 26.5%;
+        color: white;
+        margin-left: 18.5%;
         float: left;
     }
 
@@ -1400,7 +1713,6 @@ div .black {
         width: 180px;
         height: 41px;
         line-height: 43px;
-        background: beige;
         color: black;
         font-family: \5B8B\4F53, TimesNR, 'New Century Schoolbook', Georgia, 'New York', serif;
         margin: 1px 1px;
@@ -1428,13 +1740,16 @@ div .black {
         float: left;
         display: inline;
     }
-    .nav-form .nav-title{
+
+    .nav-form .nav-title {
         width: 99%;
     }
-    .nav-form-right .nav-title{
+
+    .nav-form-right .nav-title {
         width: 99%;
     }
-    .nav-form-center .nav-title{
+
+    .nav-form-center .nav-title {
         width: 99%;
     }
 
@@ -1442,10 +1757,12 @@ div .black {
         width: 98%;
         float: left;
     }
+
     .nav-form-right .form-text {
         width: 98%;
         float: left;
     }
+
     .nav-form-center .form-text {
         width: 98%;
         float: left;
@@ -1457,32 +1774,52 @@ div .black {
         display: flow-root;
         float: left
     }
-
+    .text-right{
+        width: 100%;
+    }
+    .text-right .top-text{
+        width: 100%;
+    }
+    .top-text .text{
+        width: 95%;
+    }
     .text-right .black {
         padding-bottom: 10px;
         padding-top: 10px;
-        width: 30%;
-
+        width: 55%;
+        left: 55%;
     }
-    .div-01 .containers .navs span{
+
+    .div-01 .containers .navs span {
         word-wrap: break-word;
         word-break: normal;
-        display:-webkit-box;
-        text-overflow:ellipsis;
-        width: 154px;
+        display: -webkit-box;
+        text-overflow: ellipsis;
+        width: 45%;
         margin: 1px 5px;
+        border: none;
         -webkit-line-clamp: 2;
-        -webkit-box-orient:vertical;
+        -webkit-box-orient: vertical;
         height: 50px;
         font-size: x-small;
         overflow: hidden;
     }
-    .div-01 .containers .content{
+
+    .div-01 .containers .content {
         overflow: auto;
     }
 
     .content .containers-ul li div .img .desc {
         height: 80px;
+    }
+    .nav-form{
+        width: 98%;
+    }
+    .nav-form .form-text{
+        width: 100%;
+    }
+    .form-text .nav-text{
+        width: 100%;
     }
     .nav-form-right {
         width: 98%;
@@ -1508,19 +1845,21 @@ div .black {
     }
 
     .wappal-right {
-        width: 90%;
+        width: 99%;
         padding-top: 30px;
     }
 
     .wappal-right .nav-title {
         width: 99%;
     }
-    .wappal-right .form-text{
+
+    .wappal-right .form-text {
         width: 99%;
     }
 
-    #tab {
+    .tab-main #tab {
         border: none;
+        margin-left: 0;
     }
 
     .tab-main {
@@ -1530,10 +1869,16 @@ div .black {
     #tab-header {
         padding-bottom: 120px;
     }
-    #tab-2 #tab-header-2{
+    .tab-main #tab-2{
+        width: 99%;
+        margin-left: 0;
+        padding-top: 10px;
+    }
+    #tab-2 #tab-header-2 {
         height: 35%;
     }
-    #tab-2 #tab-content-2{
+
+    #tab-2 #tab-content-2 {
         margin-top: 25%;
     }
 
@@ -1574,12 +1919,15 @@ div .black {
         -webkit-column-gap: 40px;
         -webkit-column-rule-style: dotted;
     }
-
+    .div-01 .bbs{
+        width: 100%;
+        font-size: x-small;
+    }
     div .bbs {
         padding-bottom: 55px;
     }
 
-    div .bbs ul .bbs-li {
+    .bbs ul .bbs-li {
         width: 100px;
         display: inline;
         line-height: 3ch;
@@ -1590,9 +1938,12 @@ div .black {
 
     .bbs .bbs-li a {
         margin: 0;
-        padding: 1px 5px;
+        padding: 0;
     }
-
+    .div-01 .bbs ul{
+        margin-left: -10px;
+        padding: 1px 1px;
+    }
     .bbs-tab {
         overflow: auto;
     }
@@ -1615,8 +1966,22 @@ div .black {
 
     .icon-renzheng, .bottom-icon {
         width: 100%;
-        padding-top: 10%;
+        padding-top: 15%;
         margin: 20px;
+    }
+    .wappal-left .form-text{
+        width: 100%;
+    }
+    .form-text .responsive{
+        width: 102%;
+        margin-left: -5px;
+    }
+    .wappal-right .form-text{
+        width: 100%;
+    }
+    .form-text .responsive{
+        width: 102%;
+        margin-left: -5px;
     }
 }
 
@@ -1955,7 +2320,7 @@ div .black {
     /*width: 95%;*/
     font-size: larger;
     height: 45px;
-    background: rgba(255, 64, 0, 0.6);
+    background: rgba(244, 0, 4, 1);
 }
 
 .nav-titles {
@@ -1964,7 +2329,7 @@ div .black {
     width: 96%;
     font-size: larger;
     height: 45px;
-    background: rgba(255, 64, 0, 0.6);
+    background: rgba(244, 0, 4, 1);
 }
 
 .title-left {
@@ -1972,7 +2337,8 @@ div .black {
     position: relative;
     margin: auto;
     height: 41px;
-    border-left: 12px solid red;
+    color: #fff;
+    border-left: 12px solid #BF1607;
     text-align: left;
     display: table-cell;
     vertical-align: middle;
@@ -1986,7 +2352,7 @@ div .black {
 
 .title-right {
     float: right;
-    color: #0f0f0f;
+    color: #fff;
     margin-top: 5px;
     font-size: xx-large;
     margin-right: 10px;
@@ -2415,6 +2781,7 @@ button {
     /*width: 100%;*/
     position: absolute;
     /*left: -16px;*/
+    color: gray;
 }
 
 #tab-header ul li {
@@ -2478,14 +2845,14 @@ button {
 #tab-content .dom ul li {
     float: left;
     /*background-color: red;*/
-    margin: 15px 10px;
+    margin: 15px 0;
     width: 225px;
 }
 
 #tab-content-2 .dom ul li {
     float: left;
     /*background-color: red;*/
-    margin: 15px 10px;
+    margin: 15px 0;
     width: 225px;
 }
 
@@ -2747,7 +3114,7 @@ div .bbs ul {
     text-align: center;
 }
 
-div .bbs ul .bbs-li {
+ul .bbs-li {
     display: inline;
     line-height: 3ch;
     /*margin: 10px 5ch;*/
@@ -2840,7 +3207,7 @@ div .bbs ul .bbs-li a.tabactive {
 .bottom-icon {
     position: absolute;
     top: 30px;
-    right: 90px;
+    right: 50px;
 }
 
 .bottom-icon img {
