@@ -1099,7 +1099,8 @@
             <div class="box-border">
                 <div class="sev-t">
                     <p class="sev-p">
-                        0797-12388<label style="color: #000;">或</label>0797-8391369
+                        0797-12388<br/>
+                        0797-8391369
                     <dl>
                         <dt>来信请寄：</dt>
                         <dd>
@@ -1109,7 +1110,7 @@
                         <dt>来访请到：</dt>
                         <dd>赣州市人民来访接待中心</dd>
                         <dt>网上举报：</dt>
-                        <dd><a target="_blank" href="www.gzjj.gov.cn">www.gzjj.gov.cn</a></dd>
+                        <dd><a target="_blank" href="http://www.gzjj.gov.cn">www.gzjj.gov.cn</a></dd>
                     </dl>
                     </p>
 
